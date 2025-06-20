@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IMDb: Ratings, Reviews and where to watch Best Movies and TV Shows</title>
+  <link rel="icon" type="image/png" href="src/logo.png">
   <link rel = "stylesheet" href = "style.css">
 </head>
 <body>
   <!--Header-->
   <div id = "header">
-    <img id = "logo" src="src/logo.png">
-    <bold id = "fav">Favourites</bold>
-    <input id = "input" placeholder = "Enter movie title..." type="text">
+    <img id = "logo" class="nav" src="src/logo.png">
+    <a id="fav" href = "favourites.html">Favourites</a>
+    <input id = "movie-searchbox" placeholder = "Enter movie title..." type="text">
+    <div id="search-list" class="search-list"></div>
   </div>
 
   <!--Main-->
