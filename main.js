@@ -1,11 +1,11 @@
-const imdbIcon = document.getElementById('logo')
-if(imdbIcon){
-    imdbIcon.addEventListener('click', function(){
-    window.location.href = 'index.html';
-  }) 
-}
+// const imdbIcon = document.getElementById('logo')
+// if(imdbIcon){
+//     imdbIcon.addEventListener('click', function(){
+//     window.location.href = 'index.html';
+//   }) 
+// }
 
-const apiKey = '4574d603';
+const apiKey = '6d04f0b5';
 const searchInput = document.getElementById('movie-searchbox');
 const suggestionList = document.getElementById("search-list");
 
@@ -14,6 +14,7 @@ searchInput.addEventListener('input', function () {
 
   if (searchTerm === '') {
     suggestionList.innerHTML = '';
+    suggestionList.style.display = 'none';
     return;
   }
 
@@ -21,20 +22,21 @@ searchInput.addEventListener('input', function () {
     .then(response => response.json())
     .then(data => {
       if (data.Response === 'True') {
-        Suggestionsdisplay(data.Search);
-      } else {
-        suggestionList.textContent = "No result found";
+        suggestionsDisplay(data.Search);
+        suggestionList.style.display = 'block';
+       } else {
+        suggestionList.innerHTML = '';
       }
     })
     .catch(error => console.error('Error fetching search results:', error));
+
 });
 
-function Suggestionsdisplay(suggestions) {
+function suggestionsDisplay(suggestions) {
   const maxSuggestions = 5;
 
   if (suggestions.length === 0) {
     suggestionList.textContent = "No result found";
-    return;
   }
 
   suggestionList.innerHTML = '';
@@ -47,6 +49,7 @@ function Suggestionsdisplay(suggestions) {
     const posterImg = document.createElement('img');
     posterImg.src = suggestion.Poster !== 'N/A' ? suggestion.Poster : 'src/samplePoster.jpg';
     posterImg.alt = suggestion.Title;
+    posterImg.classList.add('poster-img');
     suggestionLink.appendChild(posterImg);
 
     const infoDiv = document.createElement('div');
@@ -62,12 +65,14 @@ function Suggestionsdisplay(suggestions) {
     infoDiv.appendChild(yearOfRelease);
 
     suggestionLink.appendChild(infoDiv);
+    
+    
 
-    suggestionLink.addEventListener('click', function () {
-      suggestionList.innerHTML = '';
-      localStorage.setItem('movieInfo', JSON.stringify(suggestion));
-      window.location.href = 'movieInformation.html';
-    });
+    // suggestionLink.addEventListener('click', function () {
+    //   suggestionList.innerHTML = '';
+    //   localStorage.setItem('movieInfo', JSON.stringify(suggestion));
+    //   window.location.href = 'movieInformation.html';
+    // });
 
     suggestionList.appendChild(suggestionLink);
   }

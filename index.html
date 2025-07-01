@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IMDb: Ratings, Reviews and where to watch Best Movies and TV Shows</title>
-  <link rel="icon" type="image/png" href="src/logo.png">
-  <link rel = "stylesheet" href = "style.css">
-</head>
-<body>
-  <!--Header-->
-  <div id = "header">
-    <img id = "logo" class="nav" src="src/logo.png">
-    <a id="fav" href = "favourites.html">Favourites</a>
-    <input id = "movie-searchbox" placeholder = "Enter movie title..." type="text">
-    <div id="search-list" class="search-list"></div>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDb: Ratings, Reviews and where to watch Best Movies and TV Shows</title>
+    <link rel="icon" type="image/png" href="src/logo.png">
+    <link rel = "stylesheet" href = "style.css">
+  </head>
+  <body>
+    <!--Header-->
+    <header id = "header">
+      <div id = "part1">
+        <!--logo, favourites-->
+        <img id = "logo" class="nav" src="src/logo.png">
+        <a id="fav" href = "favourites.html">Favourites</a>
+      </div>
+      
+      <div id = "part2">
+        <!--input-->
+        <input id = "movie-searchbox" class="*" placeholder = "Enter movie title..." type="text">
+      </div>
+    </header>
+    <div id="search-list" class="*"></div>
+   
 
-  <!--Main-->
-  <div id = "main">
-    <img src = "src/movietheatre.jpg">
-  </div>
-  <script src="main.js"></script>
-</body>
+    <!--Main-->
+    <main id = "main" class="movietheatre">
+      <!--poster-->
+      <img src = "src/movietheatre.jpg">
+    </main>
+    
+    <script src="main.js"></script>
+  </body>
 </html>
