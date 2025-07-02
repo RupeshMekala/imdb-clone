@@ -81,50 +81,51 @@ body {
 }
 
 #search-list {
+  margin-top: 2%;
+  flex-wrap: wrap;
+  display: flex;
+  position: absolute;
   width: 100%;
   background-color: #1c1c1c;
   border-radius: 5px;
-  z-index: 100;
-  max-height: 300px;
   overflow-y: auto;
   box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  scrollbar-width: none;
+  z-index: 1000;
   display: none; /* Toggle via JavaScript */
   
 }
 
-.search-list-item {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #333;
-  cursor: pointer;
-  color: white;
-  transition: background-color 0.2s ease-in-out;
-}
 
-.search-list-item:hover {
-  background-color: #333;
-}
-
-.search-list-item img {
-  width: 50px;
-  height: 75px;
-  object-fit: cover;
-  margin-right: 15px;
-  border-radius: 5px;
-}
 
 .suggestionLink{ /*used in main.js*/
-    
+    display: flex;
     height:10vh;    
     background-color: grey;
     color:white;
     cursor: pointer;
     padding-bottom: 2vh;
-    border-style: groove; 
-    z-index:2;   
+    border-style: groove;  
 }
 
 .poster-img {
+  padding-left: 1%;
+  padding-top: 1%;
+  padding-right: 3%;
   height: 100%;
 }
+
+.search-wrapper {
+  position: relative; /* makes this a positioning context for search-list */
+  width: 100%;
+}
+
+
+/*Movie.html*/
+
+.movie-card { 
+  width: 60%;
+  display: flex;
+  height: auto;
+}
+

@@ -68,14 +68,15 @@ function suggestionsDisplay(suggestions) {
     
     
 
-    // suggestionLink.addEventListener('click', function () {
-    //   suggestionList.innerHTML = '';
-    //   localStorage.setItem('movieInfo', JSON.stringify(suggestion));
-    //   window.location.href = 'movieInformation.html';
-    // });
+    suggestionLink.addEventListener('click', function () {
+      suggestionList.innerHTML = '';
+      localStorage.setItem('movieInfo', JSON.stringify(suggestion));
+      window.location.href = 'movieInfo.html';
+    });
 
     suggestionList.appendChild(suggestionLink);
   }
+  console.log(suggestionList)
 }
 
 
