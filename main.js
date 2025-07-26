@@ -5,7 +5,7 @@
 //   }) 
 // }
 
-const apiKey = '6d04f0b5';
+const apiKey = '4574d603';
 const searchInput = document.getElementById('movie-searchbox');
 const suggestionList = document.getElementById("search-list");
 

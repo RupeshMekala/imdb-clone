@@ -1,5 +1,10 @@
+html, body {
+  scrollbar-width: none;
+}
+
 body {
-  background-color: rgb(24, 23, 23);
+  background-color: #333;
+  height: 100%;
 }
 
 #header{
@@ -11,6 +16,7 @@ body {
   align-items: center;
   gap: 20%;
   width: 50%;
+  background-color: #333;
 }
 
 #part2{
@@ -48,7 +54,7 @@ body {
   padding-top: 1.5%;
   padding-bottom: 1.5%;
   /* padding-right: 20%; */
-  background-color: rgb(24, 23, 23);
+  background-color: #333;
   border-radius: 5px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.5);
@@ -61,7 +67,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(24, 23, 23);
+  background-color: #333;
   padding: 10px 20px;
   position: relative;
 }
@@ -70,7 +76,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 #main img {
@@ -123,9 +129,140 @@ body {
 
 /*Movie.html*/
 
-.movie-card { 
-  width: 60%;
+#movie-card{
+  position: relative;
+  background-color: dimgray;
+  box-shadow: 4px 4px 10px slategrey;
+  border-radius: 25px;
+  margin-top: 1%;
+  margin-left: 5%;
+  height: 75vh;
+  width: 170vh;
   display: flex;
-  height: auto;
+  padding: 10px;
 }
+
+.search-image img{
+  border-radius: 25px;
+  box-shadow: 2px 2px 10px black;
+  height: 70vh;
+  width: 70vh;
+  margin: 3%;
+}
+
+.search-info {
+  position: absolute;
+  padding-left: 48%;
+  padding-right: 5%;
+  padding-top: 1%;
+  height: 70vh;
+  font-size: 100%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  font-size: 120%;
+}
+
+
+/* favourites.html */
+
+
+#horizontal-scrollbar {
+  background-color: grey;
+  box-shadow: 2px 2px 20px black;
+  height: 40vw;
+  width: auto;
+  margin-top: 2%;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  padding-left: 10px;
+  scrollbar-width: none;
+}
+
+.displayCard {
+  flex: 0 0 auto;
+  position: relative;
+  background-color: white;
+  height: 95%;
+  width: 280px;
+  margin-right: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 15px black;
+  overflow: hidden;
+}
+
+.displayCard .image{
+  height: 99%;
+  width: 99%;
+  border-radius: 20px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.details {
+  padding-top: 40px;
+  white-space: normal;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(255,255,255,0.6);
+  box-sizing: border-box;
+  z-index: 2;
+  text-align: left;
+  gap: 8px;
+  padding-left: 10px;
+  padding-top: 40%;
+}
+
+.displayCard:hover .details {
+  display: none;
+  z-index: 1;
+}
+
+.displayCard:hover .image {
+  z-index: 2;
+}
+
+.displayCard:hover .my-fav-btn {
+  color: wheat;
+}
+
+.displayCard:not(:hover) .details{
+  display: block;
+}
+
+.element {
+  color: black;
+  font-size: large;
+  font-weight: bold;
+  margin-top: 8px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+
+.my-fav-btn {
+  position: absolute;
+  z-index: 6;
+  cursor: pointer;
+  top: 15px;
+  right: 15px;
+  font-size: larger;
+}
+
+
+
+
+
+
+
+
 
